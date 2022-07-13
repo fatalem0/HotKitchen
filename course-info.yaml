@@ -1,0 +1,11 @@
+type: marketplace
+title: HotKitchen
+language: English
+summary: Your friend has decided to open a new restaurant and you have agreed to help
+  him. Since the friend wants everything to be automated, and his customers have access
+  to the restaurant through different applications, you have to write a RESTful API
+  for his restaurant. In this project, you'll create your own API that will help you
+  interact properly with your friend's restaurant.
+programming_language: Kotlin
+content:
+- HotKitchen

@@ -1,0 +1,24 @@
+type: edu
+files:
+- name: src/hotkitchen/Application.kt
+  visible: true
+- name: test/HotKitchenTest.kt
+  visible: false
+- name: build.gradle
+  visible: true
+- name: src/hotkitchen/routing/Auth.kt
+  visible: true
+- name: src/hotkitchen/data/ResponseStatus.kt
+  visible: true
+- name: src/resources/application.conf
+  visible: true
+- name: src/hotkitchen/database/DatabaseConfig.kt
+  visible: true
+- name: src/hotkitchen/database/CredentialsTable.kt
+  visible: true
+- name: src/hotkitchen/database/DatabaseController.kt
+  visible: true
+- name: src/hotkitchen/data/Credentials.kt
+  visible: true
+- name: src/hotkitchen/data/SignInCredentials.kt
+  visible: true
