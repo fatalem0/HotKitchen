@@ -51,7 +51,7 @@ class HotKitchenTest : StageTest<Any>() {
     private val price = currentMeals[0].price + currentMeals[1].price + currentMeals[2].price
     private val mealsIds = listOf(currentMeals[0].mealId, currentMeals[1].mealId, currentMeals[2].mealId)
     private val currentOrder =
-        Order(time.toInt(), currentCredentialsClient.email, mealsIds, price, currentUserClient.address, "COOK")
+        Order(time.toInt(), currentCredentialsClient.email, mealsIds, price, currentUserClient.address, "IN PROGRESS")
 
     private lateinit var signInTokenClient: String
     private lateinit var signInTokenStaff: String
@@ -218,7 +218,7 @@ class HotKitchenTest : StageTest<Any>() {
             val orders: List<Order> = Json.decodeFromString(response.content ?: "")
             var flag = true
             for (order in orders) {
-                if (order.status == "COOK") incompleteSize++
+                if (order.status == "IN PROGRESS") incompleteSize++
                 if (order.orderId == currentOrder.orderId) flag = false
             }
             if (flag)
@@ -238,7 +238,7 @@ class HotKitchenTest : StageTest<Any>() {
         }) {
             val orders: List<Order> = Json.decodeFromString(response.content ?: "")
             for (order in orders)
-                if (order.status != "COOK") return@withApplication CheckResult.wrong("One of the orders is COMPLETE.")
+                if (order.status != "IN PROGRESS") return@withApplication CheckResult.wrong("One of the orders is COMPLETE.")
             if (orders.size != incompleteSize) return@withApplication CheckResult.wrong("Invalid size of Incomplete orders.")
             if (response.status() != HttpStatusCode.OK)
                 return@withApplication CheckResult.wrong("Wrong status code in /orderHistory")
